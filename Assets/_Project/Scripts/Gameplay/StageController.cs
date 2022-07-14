@@ -47,4 +47,19 @@ public class StageController : Singleton<StageController>
             stageRow.Init(Mathf.Min(_stageCount - _instantiatedStagesCount, 4), alignment);
         }
     }
+
+    public void ResetStageButtons()
+    {
+        foreach (Transform child in _stageRowParent)
+        {
+            Destroy(child.gameObject);
+        }
+        
+        _stageStarCount.Value = 0; 
+        _instantiatedStagesCount = 0;
+        
+        _lastUnlockedStage = Random.Range(1, 1000);
+
+        StartCoroutine(SpawnStageButtons());
+    }
 }

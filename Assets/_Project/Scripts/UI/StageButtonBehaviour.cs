@@ -23,9 +23,9 @@ public class StageButtonBehaviour : MonoBehaviour
         
         if (isTutorial)
         {
-            print("isTutorial");
             Instantiate(_tutorialSpriteGameObject, transform.GetChild(0));
             _webOverlay.SetActive(false);
+            _button.interactable = true;
             _stageNumberText.enabled = false;
         }
         else if (_stageNumber <= StageController.Instance.LastUnlockedStage)

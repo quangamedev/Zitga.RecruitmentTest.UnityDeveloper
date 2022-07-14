@@ -22,6 +22,13 @@ public class StageRowBehaviour : MonoBehaviour
             var stageButton = Instantiate(_stageButtonPrefab, transform);
             
             StageController.Instance.InstantiatedStagesCount++;
+            
+            if (i == 3)
+            {
+                stageButton.Init(connectUpward:true);
+                return;
+            }
+            
             stageButton.Init(StageController.Instance.InstantiatedStagesCount == 1);
         }
     }

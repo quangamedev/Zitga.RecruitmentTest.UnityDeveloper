@@ -325,6 +325,7 @@ MonoBehaviour:
   _button: {fileID: 6574165243550150196}
   _starsHolder: {fileID: 6574165244097772342}
   _stageStarCount: {fileID: 11400000, guid: bf594b10db1ed74478368b6e718ec7be, type: 2}
+  _verticalLine: {fileID: 9207094335144080531, guid: 98990bf51216da842b4d58f0cf5cd59d, type: 3}
 --- !u!1 &6574165243873084520
 GameObject:
   m_ObjectHideFlags: 0

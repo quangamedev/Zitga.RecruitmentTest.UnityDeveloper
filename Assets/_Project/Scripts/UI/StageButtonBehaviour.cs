@@ -59,11 +59,21 @@ public class StageButtonBehaviour : MonoBehaviour, IPoolable<StageButtonBehaviou
 
         if (_stageNumber == StageController.Instance.LastUnlockedStage) return;
 
-        int rand = Random.Range(0, 3);
-
-        for (int i = 0; i <= rand; i++)
+        int starsCount;
+        
+        if (_stageNumber <= StageController.Instance.StagesStar.Count) //if this level have stars saved
         {
-            _starsHolder.GetChild(i).gameObject.SetActive(true);
+            starsCount = StageController.Instance.StagesStar[_stageNumber - 1]; //-1 in index as stages start from 1
+        }
+        else
+        {
+            starsCount = Random.Range(1, 4);
+            StageController.Instance.StagesStar.Add(starsCount);
+        }
+
+        for (int i = 1; i <= starsCount; i++)
+        {
+            _starsHolder.GetChild(i-1).gameObject.SetActive(true);
             _stageStarCount.Value++;
         }
     }

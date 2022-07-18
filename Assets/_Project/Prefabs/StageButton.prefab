@@ -319,13 +319,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e91e6ac96a2f844bd2521c970a9ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tutorialSpriteGameObject: {fileID: 584567103099806478, guid: 9ad1e87b1b734e24b961238a49f36b31, type: 3}
   _webOverlay: {fileID: 6574165242939954337}
   _stageNumberText: {fileID: 6574165243873084518}
   _button: {fileID: 6574165243550150196}
   _starsHolder: {fileID: 6574165244097772342}
   _stageStarCount: {fileID: 11400000, guid: bf594b10db1ed74478368b6e718ec7be, type: 2}
-  _verticalLine: {fileID: 9207094335144080531, guid: 98990bf51216da842b4d58f0cf5cd59d, type: 3}
+  _tutorialSpriteGameObject: {fileID: -7093124316340864823, guid: 9ad1e87b1b734e24b961238a49f36b31, type: 3}
+  _verticalLine: {fileID: -3318366152118069242, guid: 98990bf51216da842b4d58f0cf5cd59d, type: 3}
 --- !u!1 &6574165243873084520
 GameObject:
   m_ObjectHideFlags: 0

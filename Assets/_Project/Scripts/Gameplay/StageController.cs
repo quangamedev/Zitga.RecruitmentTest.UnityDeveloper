@@ -1,6 +1,7 @@
 using System.Collections;
 using DesignPatterns.Singleton;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StageController : Singleton<StageController>
 {
@@ -9,6 +10,8 @@ public class StageController : Singleton<StageController>
 
     [SerializeField] private StageRowBehaviour _stageRowPrefab;
 
+    [SerializeField] private Button _resetButton;
+
     [Header("Stage settings")]
     [SerializeField] private int _stageCount = 999;
 
@@ -16,6 +19,7 @@ public class StageController : Singleton<StageController>
 
     private int _instantiatedStagesCount;
     private int _lastUnlockedStage;
+    private static ObjectPool<StageRowBehaviour> _stageRowPool;
 
     public int InstantiatedStagesCount
     {
@@ -31,6 +35,8 @@ public class StageController : Singleton<StageController>
         
         _lastUnlockedStage = Random.Range(1, 1000);
 
+        _stageRowPool = new ObjectPool<StageRowBehaviour>(_stageRowPrefab);
+        
         StartCoroutine(SpawnStageButtons());
     }
 
@@ -43,16 +49,20 @@ public class StageController : Singleton<StageController>
 
             //right alignment is i is even
             StageRowAlignment alignment = i % 2 == 0 ? StageRowAlignment.Right : StageRowAlignment.Left;
-            var stageRow = Instantiate(_stageRowPrefab, _stageRowParent);
+            var stageRow = _stageRowPool.Pull(_stageRowParent);
             stageRow.Init(Mathf.Min(_stageCount - _instantiatedStagesCount, 4), alignment);
         }
+
+        _resetButton.interactable = true;
     }
 
     public void ResetStageButtons()
     {
+        _resetButton.interactable = false;
+        
         foreach (Transform child in _stageRowParent)
         {
-            Destroy(child.gameObject);
+            child.gameObject.SetActive(false);
         }
         
         _stageStarCount.Value = 0; 

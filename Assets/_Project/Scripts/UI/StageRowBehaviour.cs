@@ -4,10 +4,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StageRowBehaviour : MonoBehaviour
+public class StageRowBehaviour : MonoBehaviour, IPoolable<StageRowBehaviour>
 {
     [SerializeField] private HorizontalLayoutGroup _horizontalLayoutGroup;
     [SerializeField] private StageButtonBehaviour _stageButtonPrefab;
+
+    private ObjectPool<StageButtonBehaviour> _stageButtonPool;
+
+    private void Awake()
+    {
+        _stageButtonPool = new ObjectPool<StageButtonBehaviour>(_stageButtonPrefab);
+    }
 
     public void Init(int stageCount, StageRowAlignment stageRowAlignment = StageRowAlignment.Left)
     {
@@ -19,7 +26,7 @@ public class StageRowBehaviour : MonoBehaviour
 
         for (int i = 0; i < stageCount; i++)
         {
-            var stageButton = Instantiate(_stageButtonPrefab, transform);
+            var stageButton = _stageButtonPool.Pull(transform);
             
             StageController.Instance.InstantiatedStagesCount++;
             
@@ -31,6 +38,23 @@ public class StageRowBehaviour : MonoBehaviour
             
             stageButton.Init(StageController.Instance.InstantiatedStagesCount == 1);
         }
+    }
+
+    private void OnDisable()
+    {
+        ReturnToPool();
+    }
+
+    private Action<StageRowBehaviour> returnToPool;
+
+    public void Initialize(Action<StageRowBehaviour> returnAction)
+    {
+        returnToPool = returnAction;
+    }
+
+    public void ReturnToPool()
+    {
+        returnToPool?.Invoke(this);
     }
 }
 

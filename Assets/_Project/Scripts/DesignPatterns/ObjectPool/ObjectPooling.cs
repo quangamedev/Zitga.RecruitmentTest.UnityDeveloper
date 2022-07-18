@@ -10,13 +10,13 @@ using System;
 
 public class ObjectPool<T> : IPool<T> where T : MonoBehaviour, IPoolable<T>
 {
-    public ObjectPool(GameObject pooledObject, int numToSpawn = 0)
+    public ObjectPool(T pooledObject, int numToSpawn = 0)
     {
         prefab = pooledObject;
         Spawn(numToSpawn);
     }
 
-    public ObjectPool(GameObject pooledObject, Action<T> pullObject, Action<T> pushObject, int numToSpawn = 0)
+    public ObjectPool(T pooledObject, Action<T> pullObject, Action<T> pushObject, int numToSpawn = 0)
     {
         prefab = pooledObject;
         this.pullObject = pullObject;
@@ -26,17 +26,17 @@ public class ObjectPool<T> : IPool<T> where T : MonoBehaviour, IPoolable<T>
 
     private Action<T> pullObject;
     private Action<T> pushObject;
-    private Stack<T> pooledObjects = new Stack<T>();
-    private GameObject prefab;
+    private Queue<T> pooledObjects = new Queue<T>();
+    private T prefab;
     public int pooledCount => pooledObjects.Count;
 
-    public T Pull()
+    public T Pull(Transform parent = null)
     {
         T t;
         if (pooledCount > 0)
-            t = pooledObjects.Pop();
+            t = pooledObjects.Dequeue();
         else
-            t = GameObject.Instantiate(prefab).GetComponent<T>();
+            t = parent ? GameObject.Instantiate(prefab, parent) : GameObject.Instantiate(prefab);
 
         t.gameObject.SetActive(true); //ensure the object is on
         t.Initialize(Push);
@@ -84,7 +84,7 @@ public class ObjectPool<T> : IPool<T> where T : MonoBehaviour, IPoolable<T>
 
     public void Push(T t)
     {
-        pooledObjects.Push(t);
+        pooledObjects.Enqueue(t);
 
         //create default behavior to turn off objects
         pushObject?.Invoke(t);
@@ -98,8 +98,8 @@ public class ObjectPool<T> : IPool<T> where T : MonoBehaviour, IPoolable<T>
 
         for (int i = 0; i < number; i++)
         {
-            t = GameObject.Instantiate(prefab).GetComponent<T>();
-            pooledObjects.Push(t);
+            t = GameObject.Instantiate(prefab);
+            pooledObjects.Enqueue(t);
             t.gameObject.SetActive(false);
         }
     }
@@ -107,7 +107,7 @@ public class ObjectPool<T> : IPool<T> where T : MonoBehaviour, IPoolable<T>
 
 public interface IPool<T>
 {
-    T Pull();
+    T Pull(Transform parent = null);
     void Push(T t);
 }
 

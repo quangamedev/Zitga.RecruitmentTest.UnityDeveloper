@@ -1050,6 +1050,7 @@ MonoBehaviour:
   _stageRowParent: {fileID: 1961567976}
   _stageRowPrefab: {fileID: 6475983764643110004, guid: 279c9240bf9c2aa4ea92c1912dc719d0, type: 3}
   _resetButton: {fileID: 1928502270}
+  _verticalLayout: {fileID: 1961567977}
   _stageCount: 999
   _stageStarCount: {fileID: 11400000, guid: bf594b10db1ed74478368b6e718ec7be, type: 2}
 --- !u!4 &759697110

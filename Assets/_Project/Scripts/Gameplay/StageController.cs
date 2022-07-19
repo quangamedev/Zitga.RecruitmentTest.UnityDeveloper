@@ -11,10 +11,11 @@ public class StageController : Singleton<StageController>, ISaveable
     [SerializeField] private Transform _stageRowParent;
     [SerializeField] private StageRowBehaviour _stageRowPrefab;
     [SerializeField] private Button _resetButton;
-    [SerializeField] private VerticalLayoutGroup _verticalLayout;
 
     [Header("Stage settings")]
     [SerializeField] private int _stageCount = 999;
+
+    public int StageCount => _stageCount;
 
     [SerializeField] private IntVariable _stageStarCount;
 
@@ -65,7 +66,6 @@ public class StageController : Singleton<StageController>, ISaveable
         SaveManager.Instance.Save();
 
         _resetButton.interactable = true;
-        _verticalLayout.enabled = false;
     }
 
     public void ResetStageButtons()
@@ -81,7 +81,6 @@ public class StageController : Singleton<StageController>, ISaveable
         
         _lastUnlockedStage = Random.Range(1, 1000);
 
-        _verticalLayout.enabled = true;
         StartCoroutine(SpawnStageButtons());
     }
 

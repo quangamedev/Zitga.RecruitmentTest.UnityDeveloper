@@ -23,6 +23,7 @@ public class StageRowBehaviour : MonoBehaviour, IPoolable<StageRowBehaviour>
         
         if (stageRowAlignment == StageRowAlignment.Right)
         {
+            _horizontalLayoutGroup.childAlignment = TextAnchor.MiddleRight;
             _horizontalLayoutGroup.reverseArrangement = true;
         }
 

@@ -41,7 +41,7 @@ public class StageButtonBehaviour : MonoBehaviour, IPoolable<StageButtonBehaviou
         }
         
 
-        if (connectUpward)
+        if (connectUpward && _stageNumber < StageController.Instance.StageCount)
         {
             Instantiate(_verticalLine, transform).transform.SetSiblingIndex(0);
         }

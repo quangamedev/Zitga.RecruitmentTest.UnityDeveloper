@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SA_UISmall
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 798e6002ec9460d4b9304fcc5c5798f2, type: 3}
+    - {fileID: 2800000, guid: d1a527631bad52042be50b3e1012d678, type: 3}
+    - {fileID: 2800000, guid: a614cc741d532ce43b4d25c3859daaed, type: 3}
+    - {fileID: 2800000, guid: e4c38114f37275145858621f537fd329, type: 3}
+    - {fileID: 2800000, guid: 3f83d900b951bee4ab57b680e6dae015, type: 3}
+    - {fileID: 2800000, guid: e4cf5e788ad8dad4f9f98991217f78f5, type: 3}
+    - {fileID: 2800000, guid: 6d1efb5c7eaead94fb5ce8f2dee88ee2, type: 3}
+    - {fileID: 2800000, guid: 6cf449626e321df4fb9a4b59eea9e7fb, type: 3}
+    - {fileID: 2800000, guid: c7b73176598d64843ad54d509c86cb95, type: 3}
+    - {fileID: 2800000, guid: aaddadd18b38df34fa293ac9190aee46, type: 3}
+    totalSpriteSurfaceArea: 53111
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 3f83d900b951bee4ab57b680e6dae015, type: 3}
+  - {fileID: 21300000, guid: aaddadd18b38df34fa293ac9190aee46, type: 3}
+  - {fileID: 21300000, guid: 798e6002ec9460d4b9304fcc5c5798f2, type: 3}
+  - {fileID: 21300000, guid: 6cf449626e321df4fb9a4b59eea9e7fb, type: 3}
+  - {fileID: 21300000, guid: d1a527631bad52042be50b3e1012d678, type: 3}
+  - {fileID: 21300000, guid: e4c38114f37275145858621f537fd329, type: 3}
+  - {fileID: 21300000, guid: a614cc741d532ce43b4d25c3859daaed, type: 3}
+  - {fileID: 21300000, guid: c7b73176598d64843ad54d509c86cb95, type: 3}
+  - {fileID: 21300000, guid: e4cf5e788ad8dad4f9f98991217f78f5, type: 3}
+  - {fileID: 21300000, guid: 6d1efb5c7eaead94fb5ce8f2dee88ee2, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - stage
+  - tutorial
+  - question
+  - stage_star2
+  - darkmode_stage
+  - line_v
+  - line_h
+  - return
+  - stage_lock
+  - stage_star1
+  m_RenderDataMap: {}
+  m_Tag: SA_UISmall
+  m_IsVariant: 0

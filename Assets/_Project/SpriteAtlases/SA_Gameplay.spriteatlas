@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SA_Gameplay
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: e6aa5f3a97b7d3b48a023e262e742014, type: 3}
+    totalSpriteSurfaceArea: 435935
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: e68ee2b08ec90d44fb74bc3735dcd125, type: 3}
+  - {fileID: 21300000, guid: b6349dd03d07b924290e7daa0ceeb6f4, type: 3}
+  - {fileID: 21300000, guid: 2b2ce2a1d1b573d45aee98fe82821ecb, type: 3}
+  - {fileID: 21300000, guid: fa967ab176b85f54da88d5256ef77d4f, type: 3}
+  - {fileID: 21300000, guid: 88b20db1ffc8aa340a8e13bedea04a89, type: 3}
+  - {fileID: 21300000, guid: 7e0da3c1e35f7004e9d44aaba70fe1e1, type: 3}
+  - {fileID: 21300000, guid: ac8c5b224695b3c4e99585b2ca31d3d4, type: 3}
+  - {fileID: 21300000, guid: 0706bb523304a1c4f9cc60cbf62a7943, type: 3}
+  - {fileID: 21300000, guid: 80174d9293cba034c9baf10493e0920d, type: 3}
+  - {fileID: 21300000, guid: 8e6ffa33bc2805444af90173905e32b7, type: 3}
+  - {fileID: 21300000, guid: d93664e6574a02d4e869139b496de269, type: 3}
+  - {fileID: 21300000, guid: 8dc14417c8042d4498253217d00abb89, type: 3}
+  - {fileID: 21300000, guid: 6f8bb228f318f194bbb4d09159254feb, type: 3}
+  - {fileID: 21300000, guid: 094b832a992e7e4429f3e4b3ba33477b, type: 3}
+  - {fileID: 21300000, guid: fb79e82bb91bcf94cb39a669468e2a1b, type: 3}
+  - {fileID: 21300000, guid: 15ee8c4ba142fb148a542d58b4ce4bfa, type: 3}
+  - {fileID: 21300000, guid: f43332ab982f0ca48bbb5179830679ad, type: 3}
+  - {fileID: 21300000, guid: 1fc9aa9cfc53fe740b8618a814bdd4d4, type: 3}
+  - {fileID: 21300000, guid: c8f4c4ac72f640e4abba76ebdcbc6247, type: 3}
+  - {fileID: 21300000, guid: 437474dc49b38ae4db902202174fa68a, type: 3}
+  - {fileID: 21300000, guid: 74c5bfdc2f63c074ca283e3b44476c37, type: 3}
+  - {fileID: 21300000, guid: 1469939df5a4b014ba26bbc1954a314f, type: 3}
+  - {fileID: 21300000, guid: 333d8d9e34bbe634198ce919e1cb1785, type: 3}
+  - {fileID: 21300000, guid: 77b899fe56e192540992a6591cc951a6, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - gate_b003
+  - gate_r000
+  - button_next
+  - gate_b000
+  - gate_b007
+  - 1p_bug
+  - auto
+  - gate_r006
+  - gate_b006
+  - gate_r001
+  - 2p_bug
+  - button_menu
+  - gate_b001
+  - gate_b005
+  - gate_r004
+  - button_retry
+  - gate_r003
+  - gate_r007
+  - gate_b002
+  - gate_r005
+  - background
+  - ui_lens
+  - gate_b004
+  - gate_r002
+  m_RenderDataMap: {}
+  m_Tag: SA_Gameplay
+  m_IsVariant: 0

@@ -9,7 +9,7 @@ public class StageRowBehaviour : MonoBehaviour, IPoolable<StageRowBehaviour>
     [SerializeField] private HorizontalLayoutGroup _horizontalLayoutGroup;
     [SerializeField] private StageButtonBehaviour _stageButtonPrefab;
 
-    private ObjectPool<StageButtonBehaviour> _stageButtonPool;
+    private ObjectPool<StageButtonBehaviour> _stageButtonPool; //not static since each row would have their own objects
 
     private void Awake()
     {
@@ -18,9 +18,11 @@ public class StageRowBehaviour : MonoBehaviour, IPoolable<StageRowBehaviour>
 
     public void Init(int stageCount, StageRowAlignment stageRowAlignment = StageRowAlignment.Left)
     {
+        _horizontalLayoutGroup.enabled = true;
+        StartCoroutine(TurnOffLayoutGroup());
+        
         if (stageRowAlignment == StageRowAlignment.Right)
         {
-            _horizontalLayoutGroup.childAlignment = TextAnchor.MiddleRight;
             _horizontalLayoutGroup.reverseArrangement = true;
         }
 
@@ -38,6 +40,13 @@ public class StageRowBehaviour : MonoBehaviour, IPoolable<StageRowBehaviour>
             
             stageButton.Init(StageController.Instance.InstantiatedStagesCount == 1);
         }
+        
+    }
+
+    private IEnumerator TurnOffLayoutGroup()
+    {
+        yield return null;
+        _horizontalLayoutGroup.enabled = false;
     }
 
     private void OnDisable()

@@ -43,12 +43,12 @@ public class StageButtonBehaviour : MonoBehaviour, IPoolable<StageButtonBehaviou
 
         if (connectUpward && _stageNumber < StageController.Instance.StageCount)
         {
-            Instantiate(_verticalLine, transform).transform.SetSiblingIndex(0);
+            _verticalLinePool.Pull(transform).transform.SetSiblingIndex(0);
         }
         
         if (isTutorial)
         {
-            Instantiate(_tutorialSpriteGameObject, transform.GetChild(0));
+            _tutorialSpritePool.Pull(transform.GetChild(0));
             _stageNumberText.enabled = false;
         }
 
